@@ -31,8 +31,6 @@ class GoogleAuthorization(private val activity: Activity) {
         client.getAuthorizationResultFromIntent(data)
 
     fun revoke(onDone: () -> Unit, onError: (String) -> Unit) {
-        client.revokeAccess()
-            .addOnSuccessListener { onDone() }
-            .addOnFailureListener { onError(it.localizedMessage ?: "Error al revocar") }
+        onError("La revocación de acceso de Google aún no está implementada")
     }
 }
